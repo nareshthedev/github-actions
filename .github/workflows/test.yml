@@ -7,9 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echo "Hello world!!" 
+        run: echo "Hello world!!!!" 
       - name: python command
         run: |
           import platform
           print(platform.processor())
         shell: python
+
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: powershell
+        run: Get-location
+      - name: bash shell
+        run: pwd
+        shell: bash
